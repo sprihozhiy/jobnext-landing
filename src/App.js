@@ -11,6 +11,9 @@ import CallToAction from './components/CallToAction';
 import Footer from './components/Footer';
 
 function App() {
+
+  
+
   return (
     <div className="App">
       <Navbar />
