@@ -31,7 +31,9 @@ const ResultsTab = styled.div`
             margin-bottom: 0;
         }
         div > p {
-            margin: 0;
+            font-weight: 400;
+            margin: 0.2rem;
+            text-transform: uppercase;
         }
     }
 `

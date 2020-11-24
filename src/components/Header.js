@@ -24,18 +24,21 @@ const Jumbotron = styled.div`
             font-weight: 500;
             font-size: 1.15rem;
             margin: 0.9rem 0;
+            color: #111;
         }
         h1 {
             font-size: 4.35rem;
             font-family: Montserrat, sans-serif;
             font-weight: 800;
             margin: 0.9rem 0;
+            color: #111;
         }
         p {
             font-size: 1.05rem;
             font-family: Rubik, sans-serif;
             font-weight: 400;
             margin: 0.9rem 0;
+            color: #575757;
         }
 
         button {

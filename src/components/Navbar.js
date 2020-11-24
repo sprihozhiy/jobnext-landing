@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Navigation = styled.div`
     padding: 2rem 10rem;
     border-bottom: 1px solid #D9D9D9;
-    color: #111111;
+    color: #111;
     display: flex;
     justify-content: space-between;
     align-items: center;
