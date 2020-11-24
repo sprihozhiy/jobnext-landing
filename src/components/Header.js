@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from 'styled-components';
-import hero from '../hero.svg';
+import hero from '../assets/hero.svg';
 
 
 const Jumbotron = styled.div`
         background-image: url(${hero});
-        background-position: 120% 70%;
+        background-position: 100% 70%;
         background-repeat: no-repeat;
         display: flex;
         flex-direction: column;
