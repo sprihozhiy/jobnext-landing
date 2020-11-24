@@ -33,6 +33,9 @@ const Menu = styled.ul`
         text-decoration: none;
         color: #111111;
     }
+    @media (max-width: 468px) {
+        display: none;
+    }
 `
 
 const Button = styled.button`
@@ -45,7 +48,8 @@ const Button = styled.button`
     border-radius: 5px;
     &:hover {
         background-color: #FF715B;
-        color; #fff;
+        color: #fff;
+        cursor: pointer;
     }
 `
 

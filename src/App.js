@@ -1,5 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
+import styled from 'styled-components';
 import Navbar from './components/Navbar';
 import Header from './components/Header';
 import Results from './components/Results';
@@ -10,14 +10,24 @@ import Partners from './components/Partners';
 import CallToAction from './components/CallToAction';
 import Footer from './components/Footer';
 
-function App() {
+const Wrapper = styled.div`
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+  `
 
-  
+
+function App() {
 
   return (
     <div className="App">
-      <Navbar />
-      <Header />
+      <Wrapper>
+        <Navbar />
+        <Header />
+      </Wrapper>
       <Results />
       <Process />
       <JobCategories />
