@@ -21,7 +21,6 @@ const Wrapper = styled.div`
 
 
 function App() {
-
   return (
     <div className="App">
       <Wrapper>
