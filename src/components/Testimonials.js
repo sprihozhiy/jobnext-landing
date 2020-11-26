@@ -9,16 +9,19 @@ import quotes from '../assets/quotes.svg'
 const TestimTab = styled.div`
         display: flex;
         flex-direction: column;
-        padding: 5rem 3rem;
+        padding: 5rem 3rem 1rem;
         background-image: url(${dots});
         background-repeat: no-repeat;
         background-position: 1% 35%;
+        font-size: 1rem;
     &> h4 {
         font-family: Montserrat, sans-serif;
         font-weight: 600;
-        font-size: 2.1rem;
+        font-size: 2rem;
         text-align: center;
         padding: 0 0 3rem 0;
+        color: #111;
+
     }
     .myCarousel {
         .testimonialCard {
@@ -32,7 +35,8 @@ const TestimTab = styled.div`
             }
             .cardWrapper {
                 background-color: white;
-                margin: 35px;
+                margin: 2rem;
+                padding: 1rem;
                 box-shadow: 0 0.9rem 1.2rem rgba(153, 153, 153, 0.2);
                 border-radius: 10px;
                 padding: 10px;
