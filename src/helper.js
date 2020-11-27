@@ -9,4 +9,6 @@ const device = {
     lg: `(min-width: ${size.lg})`
 }
 
-export default {size, device}
+const breakpoint = {size, device};
+
+export default breakpoint;
