@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
+import breakpoint from '../helper'
 import hero from '../assets/hero.svg';
 
 
@@ -12,12 +13,17 @@ const Jumbotron = styled.div`
         justify-content: center;
         height: 100%;
         padding: 2rem 10rem;
-        
+        @media ${breakpoint.device.sm} {
+          background-image: none;
+          padding: 2rem; 
+        }      
         div { 
             width: 60%;
             font-size: 1rem;
+            @media ${breakpoint.device.sm} {
+                width: 100%;
+              }   
         }
-
         h4 {
             text-transform: uppercase;
             font-family: Rubik, sans-serif;
@@ -32,6 +38,9 @@ const Jumbotron = styled.div`
             font-weight: 800;
             margin: 0.9rem 0;
             color: #111;
+            @media ${breakpoint.device.sm} {
+                font-size: 2.5rem; 
+              }   
         }
         p {
             font-size: 1.05rem;

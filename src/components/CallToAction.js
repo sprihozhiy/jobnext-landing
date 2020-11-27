@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import breakpoint from '../helper'
 
 const CtaTab = styled.div`
     display: flex;
@@ -15,6 +16,10 @@ const CtaTab = styled.div`
         font-size: 2rem;
         font-weight: 600;
         color: #fff;
+        @media ${breakpoint.device.sm} {
+            font-size: 1.5rem;
+            padding: 0 0.3rem;
+        }
     }
     form {
         display: flex;
@@ -22,6 +27,12 @@ const CtaTab = styled.div`
         font-size: 1rem;
         & > * {
             margin: 0 1rem;
+            @media ${breakpoint.device.sm} {
+                margin: 0.5rem 0.2rem;
+            }
+        }
+        @media ${breakpoint.device.sm} {
+            flex-direction: column;
         }
         input {
             padding-left: 1rem;
@@ -34,6 +45,12 @@ const CtaTab = styled.div`
             width: 30rem;
             border-radius: 5px;
             box-sizing: border-box;
+            @media ${breakpoint.device.sm} {
+                width: 100%;
+                font-size: 1.2rem;
+                padding-top: 0.5rem;
+                padding-bottom: 0.5rem;
+            }
             &:focus, &:active {
                 background-color: #fff;
                 border: 2px solid #fff;
@@ -59,6 +76,10 @@ const CtaTab = styled.div`
             padding: 1rem 2rem;
             border-radius: 5px;
             text-transform: uppercase;
+            @media ${breakpoint.device.sm} {
+                padding: 0.5rem 0;
+                width: 100%;
+            }
             &:hover {
                 background-color: #fff;
                 color: #FF715B;

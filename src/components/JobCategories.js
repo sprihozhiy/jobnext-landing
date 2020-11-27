@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { v4 as uuidv4 } from 'uuid';
+import breakpoint from '../helper'
 import jobicon1 from '../assets/job-icons/1.svg'
 import jobicon2 from '../assets/job-icons/2.svg'
 import jobicon3 from '../assets/job-icons/3.svg'
@@ -16,7 +17,11 @@ const Categories = styled.div`
     color: #fff;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+    @media ${breakpoint.device.sm} {
+        padding: 1rem;
+    }
     * {
         margin: 1rem 0;
     }
@@ -24,6 +29,9 @@ const Categories = styled.div`
         font-family: Montserrat, sans-serif;
         font-size: 2rem;
         font-weight: 600;
+        @media ${breakpoint.device.sm} {
+            font-size: 1.4rem;
+        }
     }
     div {
         display: flex;
@@ -43,6 +51,12 @@ const Categories = styled.div`
             color: #fff;
             border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.16);
+            @media ${breakpoint.device.sm} {
+                height: auto;
+                width: 35%;
+                margin-right: 0.3rem;
+                padding: 0.2rem;
+            }
             &:hover {
                 box-shadow: 0 0 3px 2px rgba(255,255,255,1);
                 cursor: pointer;

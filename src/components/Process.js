@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import breakpoint from '../helper'
 import process1 from '../assets/process_1.svg'
 import process2 from '../assets/process_2.svg'
 
@@ -8,17 +9,35 @@ const ProcessTab = styled.div`
     flex-direction: column;
     font-size: 1rem;
     padding: 4rem;
+    @media ${breakpoint.device.sm} { 
+        padding: 0.5rem; 
+      }   
     div {
         display: flex;
+        flex-direction: column;
         div {
             display: flex;
             flex-direction: column;
             margin: 0 5rem;
             justify-content: center;
             font-size: 1rem;
+            @media ${breakpoint.device.sm} {
+                margin: 1.2rem; 
+            }   
+        }
+        img {
+            display: inline-block;
+            box-sizing: border-box;
+            @media ${breakpoint.device.sm} {
+                width: 100%;
+                height: auto; 
+            }   
         }
         .reverse {
             order: 2;
+            @media ${breakpoint.device.sm} {
+                order: 0; 
+              }   
         }
         & h4 {
             font-size: 2.5rem;

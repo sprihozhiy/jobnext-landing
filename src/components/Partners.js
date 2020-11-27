@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import partners from '../assets/partners.svg';
+import breakpoint from '../helper'
 
 const PartnersTab = styled.div`
     display: flex;
@@ -18,6 +19,9 @@ const PartnersTab = styled.div`
     }
     img {
         display: block;
+        @media ${breakpoint.device.sm} {
+            width: 100%;
+        }
     }
 `
 

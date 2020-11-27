@@ -1,15 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
+import breakpoint from '../helper'
 import icon1 from '../assets/icon_result_1.svg';
 import icon2 from '../assets/icon_result_2.svg';
 import icon3 from '../assets/icon_result_3.svg';
 
 const ResultsTab = styled.div`
     display: flex;
+    flex-direction: column;
     font-size: 1rem;
     font-family: Open-Sans, sans-serif;
     color: #5E57A7;
-
     justify-content: center;
     &>div {
         display: flex;
@@ -22,6 +23,9 @@ const ResultsTab = styled.div`
         border-radius: 1.4rem;
         box-shadow: 0 10px 30px rgba(153,153,153,0.20);
         margin: 3rem 1.5rem;
+        @media ${breakpoint.device.sm} {
+            width: auto; 
+        }   
         div {
             text-align: center;
         }

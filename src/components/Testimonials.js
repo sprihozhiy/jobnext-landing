@@ -1,6 +1,7 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
 import Slider from 'infinite-react-carousel'
+import breakpoint from '../helper'
 import dots from '../assets/dots.svg'
 import testimonial1 from '../assets/testimonial1.svg'
 import testimonial2 from '../assets/testimonial2.svg'
@@ -21,7 +22,9 @@ const TestimTab = styled.div`
         text-align: center;
         padding: 0 0 3rem 0;
         color: #111;
-
+        @media ${breakpoint.device.sm} {
+            font-size: 1.3rem;
+        }
     }
     .myCarousel {
         .testimonialCard {
@@ -50,13 +53,23 @@ const TestimTab = styled.div`
 `
 
 export default function Testimonials() {
+    const [screenWidth, setScreenWidth] = useState(window.innerWidth);
     const settings =  {
         arrows: false,
         arrowsBlock: false,
         centerPadding: 30,
         dots: true,
-        slidesToShow: 2
+        slidesToShow: parseInt(`${screenWidth >= 768 ? 2 : 1}`)
       };
+
+    function handleResize(e) {
+        setScreenWidth(window.innerWidth);
+     };
+
+    useEffect(()=>{
+        window.addEventListener("resize", handleResize);
+        // eslint-disable-next-line
+    },[])
 
     return (
         <TestimTab>

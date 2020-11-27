@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import breakpoint from '../helper'
 
 const Navigation = styled.div`
     padding: 2rem 10rem;
@@ -8,6 +9,10 @@ const Navigation = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    //----------------JUST BEFORE MAKING A RESPONSIVE NAVBAR---------------
+    @media ${breakpoint.device.sm} {
+        justify-content: center;
+    }
 `
 
 const Logo = styled.a`
@@ -26,6 +31,10 @@ const Menu = styled.ul`
     font-family: 'Rubik', sans-serif;
     font-weight: 500;
     font-size: 1.28rem;
+    //----------------JUST BEFORE MAKING A RESPONSIVE NAVBAR---------------
+    @media ${breakpoint.device.sm} {
+        display: none;
+    }
     li {
         padding: 0 1rem;
     }
@@ -50,6 +59,10 @@ const Button = styled.button`
         background-color: #FF715B;
         color: #fff;
         cursor: pointer;
+    }
+    //----------------JUST BEFORE MAKING A RESPONSIVE NAVBAR---------------
+    @media ${breakpoint.device.sm} {
+        display: none;
     }
 `
 
