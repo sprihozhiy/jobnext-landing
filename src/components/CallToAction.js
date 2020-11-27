@@ -6,8 +6,8 @@ const CtaTab = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 3rem 0;
-    padding: 3rem 0 5rem;
+    margin: 3rem 0 1.5rem;
+    padding: 3rem 0 6rem;
     background-color: #FF715B;
     font-size: 1rem;
     h4 {
