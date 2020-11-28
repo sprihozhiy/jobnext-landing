@@ -23,7 +23,7 @@ const ResultsTab = styled.div`
         border-radius: 1.4rem;
         box-shadow: 0 10px 30px rgba(153,153,153,0.20);
         margin: 3rem 1.5rem;
-        @media ${breakpoint.device.sm} {
+        @media ${breakpoint.device.xs} {
             width: auto; 
         }   
         div {
