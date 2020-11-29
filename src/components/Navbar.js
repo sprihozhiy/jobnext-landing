@@ -65,19 +65,19 @@ const MobileMenu = styled.ul`
       display: flex;
       flex-direction: column;
       justify-content: center;
-      background-color: #ccc;
+      background-color: #FF715B;
       list-style: none;
       li {
-        font-color: #222;
+        color: #fff;
         padding: 1rem;
-        border-bottom: 1px solid #999;
+        border-bottom: 1px solid #fff;
         &:last-of-type {
           border-bottom: none;
         }
         &:hover {
-          background-color: #888;
+          background-color: #ff5b42;
           cursor: pointer;
-          color: #fff;
+          
         }
         a {
           text-decoration: none;
