@@ -5,7 +5,6 @@ import tea from '../assets/tea.svg'
 
 const FooterTab = styled.div`
     display: flex;
-    // flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 1rem 0;
@@ -17,12 +16,18 @@ const FooterTab = styled.div`
         height: 1.7rem;
         width: auto;
     }
+    p {
+        a {
+            text-decoration: none;
+            color: #FF715B;
+        }
+    }
 `
 
 export default function Footer() {
     return (
         <FooterTab>
-            <p>Promptly <span><img src={keyboard} alt="typing..." /></span> with <span><img src={tea} alt="typing..." /></span> by Serhii</p>
+            <p><span><img src={keyboard} alt="typing..." /></span> with <span><img src={tea} alt="typing..." /></span> by <a href="https://serhii.ca">Serhii</a></p>
         </FooterTab>
     )
 }
