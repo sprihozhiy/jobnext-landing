@@ -51,6 +51,13 @@ const MobileMenuButton = styled.div`
     &:hover {
       cursor: pointer;
     }
+    .active {
+      transform: rotate(90deg);
+      transition: 0.3s ease-in-out;
+    }
+    .return {
+      transition: 0.3s ease-in-out;
+    }
     
     @media ${breakpoint.device.sm} {
       display: flex;
@@ -87,6 +94,24 @@ const MobileMenu = styled.ul`
       width: 100%;
       padding-left: 0px;
       top: 75%;
+      
+      animation: rotateX 300ms ease-in-out forwards;
+      transform-origin: top center;
+      
+      
+      @keyframes rotateX {
+        0% {
+          opacity: 0;
+          transform: rotateX(-90deg);
+        }
+        50% {
+          transform: rotateX(-20deg);
+        }
+        100% {
+          opacity: 1;
+          transform: rotateX(0deg);
+        }
+      }
 `
 
 const Button = styled.button`
@@ -153,7 +178,7 @@ export default function Navbar() {
                   <Button>Submit Your Resume</Button> 
                </div>
                <MobileMenuButton>
-                  <i className="fa fa-bars fa-2x" onClick={burgerToggle}></i>
+                  <i className={`fa fa-bars fa-2x ${burgerMenu ? "active" : "return"}`} onClick={burgerToggle}></i>
               </MobileMenuButton>
               {burgerMenu ? 
                       <MobileMenu>
