@@ -30,7 +30,7 @@ const Categories = styled.div`
         font-size: 2rem;
         font-weight: 600;
         @media ${breakpoint.device.sm} {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
         }
     }
     div {

@@ -23,7 +23,7 @@ const TestimTab = styled.div`
         padding: 0 0 3rem 0;
         color: #111;
         @media ${breakpoint.device.sm} {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
         }
     }
     .myCarousel {

@@ -1,18 +1,18 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import breakpoint from '../helper'
 
 const Navigation = styled.div`
+    position: relative;
     padding: 2rem 10rem;
     border-bottom: 1px solid #D9D9D9;
     color: #111;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    //----------------JUST BEFORE MAKING A RESPONSIVE NAVBAR---------------
     @media ${breakpoint.device.sm} {
-        justify-content: center;
-    }
+      padding: 0;
+  }
 `
 
 const Logo = styled.a`
@@ -23,6 +23,9 @@ const Logo = styled.a`
     span {
         color: #FF715B;
     }
+    @media ${breakpoint.device.sm} {
+      margin: 1rem;
+    }
 `
 
 const Menu = styled.ul`
@@ -31,7 +34,6 @@ const Menu = styled.ul`
     font-family: 'Rubik', sans-serif;
     font-weight: 500;
     font-size: 1.28rem;
-    //----------------JUST BEFORE MAKING A RESPONSIVE NAVBAR---------------
     @media ${breakpoint.device.sm} {
         display: none;
     }
@@ -42,9 +44,49 @@ const Menu = styled.ul`
         text-decoration: none;
         color: #111111;
     }
-    @media (max-width: 468px) {
-        display: none;
+`
+
+const MobileMenuButton = styled.div`
+    display: none;
+    &:hover {
+      cursor: pointer;
     }
+    
+    @media ${breakpoint.device.sm} {
+      display: flex;
+      margin: 1rem;
+  }
+`
+
+const MobileMenu = styled.ul`
+      position: absolute;
+      font-family: Rubik, sans-serif;
+      font-size: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: #ccc;
+      list-style: none;
+      li {
+        font-color: #222;
+        padding: 1rem;
+        border-bottom: 1px solid #999;
+        &:last-of-type {
+          border-bottom: none;
+        }
+        &:hover {
+          background-color: #888;
+          cursor: pointer;
+          color: #fff;
+        }
+        a {
+          text-decoration: none;
+          color: inherit;
+        }
+      }
+      width: 100%;
+      padding-left: 0px;
+      top: 75%;
 `
 
 const Button = styled.button`
@@ -60,15 +102,30 @@ const Button = styled.button`
         color: #fff;
         cursor: pointer;
     }
-    //----------------JUST BEFORE MAKING A RESPONSIVE NAVBAR---------------
     @media ${breakpoint.device.sm} {
         display: none;
     }
 `
 
 export default function Navbar() {
+    const [burgerMenu, setBurgerMenu] = useState(false);
+    function burgerToggle(){
+      setBurgerMenu(!burgerMenu);
+    }
+    const container = useRef();
+
+    function handleClickOutside (event){
+      if (container.current && !container.current.contains(event.target)) {
+        setBurgerMenu(false);
+      }
+    };
+
+    useEffect(()=>{
+      document.addEventListener("mousedown", handleClickOutside);
+    },[])
+
     return (
-            <Navigation>
+            <Navigation ref={container}>
                <div>
                  <Logo><span>Job</span>Next</Logo>  
                </div>
@@ -95,6 +152,33 @@ export default function Navbar() {
                <div>
                   <Button>Submit Your Resume</Button> 
                </div>
+               <MobileMenuButton>
+                  <i className="fa fa-bars fa-2x" onClick={burgerToggle}></i>
+              </MobileMenuButton>
+              {burgerMenu ? 
+                      <MobileMenu>
+                      <li>
+                          <a href="/">Home</a>
+                      </li>
+                      <li>
+                          <a href="/">About</a>
+                      </li>
+                      <li>
+                          <a href="/">Services</a>
+                      </li>
+                      <li>
+                          <a href="/">Category</a>
+                      </li>
+                      <li>
+                          <a href="/">Blog</a>
+                      </li>
+                      <li>
+                          <a href="/">Contact</a>
+                      </li>
+                      </MobileMenu>
+                      :
+                      null
+                    }
             </Navigation>
     )
 }
