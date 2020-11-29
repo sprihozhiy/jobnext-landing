@@ -15,6 +15,9 @@ const ProcessTab = styled.div`
     div {
         display: flex;
         flex-direction: column;
+        @media ${breakpoint.device.lg} {
+            flex-direction: row;
+        }
         div {
             display: flex;
             flex-direction: column;
