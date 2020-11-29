@@ -70,7 +70,7 @@ const Jumbotron = styled.div`
     `
 
 export default function Header() {
-    
+
     return (
         <Jumbotron>
             <div>
